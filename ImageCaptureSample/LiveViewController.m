@@ -218,20 +218,28 @@
     }
 }
 
-- (IBAction)tapMove:(UIButton*)sender {
-    if(sender.tag==0){
+- (IBAction)moveInside:(UIButton *)sender {
+    if(sender.tag==1){
         [self sendOn:1];
-    }else if(sender.tag==1){
-        [self sendOn:2];
     }else if(sender.tag==2){
-        [self sendOn:3];
+        [self sendOn:2];
     }else if(sender.tag==3){
-        [self sendOn:4];
+        [self sendOn:3];
     }else if(sender.tag==4){
-        [self sendOn:5];
+        [self sendOn:4];
     }else if(sender.tag==5){
+        [self sendOn:5];
+    }else if(sender.tag==6){
         [self sendOn:6];
     }
+}
+
+- (IBAction)removeOutside:(UIButton *)sender {
+    [self sendOn:0];
+}
+
+- (IBAction)removeInside:(UIButton*)sender {
+    [self sendOn:0];
 }
 
 
