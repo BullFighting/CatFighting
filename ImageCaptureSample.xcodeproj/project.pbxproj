@@ -27,6 +27,7 @@
 		4F114D9F1919C5E700C565B7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F114D9E1919C5E700C565B7 /* AudioToolbox.framework */; };
 		4F2C2C031919CF300092A6C8 /* FocusedSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2C2C021919CB8F0092A6C8 /* FocusedSound.caf */; };
 		4FA91109191B04910040A592 /* ShutterSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA91108191B04910040A592 /* ShutterSound.caf */; };
+		A8EFBFED1AA2DCCD00C1415A /* BLEBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EFBFEC1AA2DCCD00C1415A /* BLEBaseClass.m */; };
 		D8AAACC819FF84CE00699F07 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AAACC719FF84CE00699F07 /* Reachability.m */; };
 		D8AAACCB19FF84D400699F07 /* ConnectingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AAACCA19FF84D400699F07 /* ConnectingViewController.m */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,8 @@
 		4F114D9E1919C5E700C565B7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4F2C2C021919CB8F0092A6C8 /* FocusedSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FocusedSound.caf; sourceTree = "<group>"; };
 		4FA91108191B04910040A592 /* ShutterSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShutterSound.caf; sourceTree = "<group>"; };
+		A8EFBFEB1AA2DCCD00C1415A /* BLEBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEBaseClass.h; sourceTree = "<group>"; };
+		A8EFBFEC1AA2DCCD00C1415A /* BLEBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEBaseClass.m; sourceTree = "<group>"; };
 		D8AAACC619FF84CE00699F07 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		D8AAACC719FF84CE00699F07 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		D8AAACC919FF84D400699F07 /* ConnectingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectingViewController.h; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 		311202BD1909EF0D0064C413 /* ImageCaptureSample */ = {
 			isa = PBXGroup;
 			children = (
+				A8EFBFEB1AA2DCCD00C1415A /* BLEBaseClass.h */,
+				A8EFBFEC1AA2DCCD00C1415A /* BLEBaseClass.m */,
 				311202C61909EF0D0064C413 /* AppDelegate.h */,
 				311202C71909EF0D0064C413 /* AppDelegate.m */,
 				311202C91909EF0D0064C413 /* Main.storyboard */,
@@ -231,6 +236,7 @@
 				311202C41909EF0D0064C413 /* main.m in Sources */,
 				31A68FA31910D25C008B3CDA /* RecViewController.m in Sources */,
 				31A68FA61910D363008B3CDA /* SettingViewController.m in Sources */,
+				A8EFBFED1AA2DCCD00C1415A /* BLEBaseClass.m in Sources */,
 				D8AAACCB19FF84D400699F07 /* ConnectingViewController.m in Sources */,
 				31BD78FC1923116E00B57B6E /* CameraLiveImageView.m in Sources */,
 			);
