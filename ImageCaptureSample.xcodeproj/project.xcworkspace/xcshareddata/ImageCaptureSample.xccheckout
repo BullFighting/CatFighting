@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>41481CF2-7E12-4049-90F3-43E710B0B63C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ImageCaptureSample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E7F6B77EE1A437E3ED3CD91475BD6FA2CC0C65E4</key>
+		<string>github.com:BullFighting/CatFighting.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ImageCaptureSample.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E7F6B77EE1A437E3ED3CD91475BD6FA2CC0C65E4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:BullFighting/CatFighting.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E7F6B77EE1A437E3ED3CD91475BD6FA2CC0C65E4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E7F6B77EE1A437E3ED3CD91475BD6FA2CC0C65E4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CatFighting</string>
+		</dict>
+	</array>
+</dict>
+</plist>
