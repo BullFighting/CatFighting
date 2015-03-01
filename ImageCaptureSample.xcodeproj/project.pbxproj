@@ -27,6 +27,7 @@
 		4F114D9F1919C5E700C565B7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F114D9E1919C5E700C565B7 /* AudioToolbox.framework */; };
 		4F2C2C031919CF300092A6C8 /* FocusedSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2C2C021919CB8F0092A6C8 /* FocusedSound.caf */; };
 		4FA91109191B04910040A592 /* ShutterSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA91108191B04910040A592 /* ShutterSound.caf */; };
+		6B513AEF1AA3047400790636 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B513AEE1AA3047400790636 /* CoreBluetooth.framework */; };
 		A8EFBFED1AA2DCCD00C1415A /* BLEBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EFBFEC1AA2DCCD00C1415A /* BLEBaseClass.m */; };
 		D8AAACC819FF84CE00699F07 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AAACC719FF84CE00699F07 /* Reachability.m */; };
 		D8AAACCB19FF84D400699F07 /* ConnectingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AAACCA19FF84D400699F07 /* ConnectingViewController.m */; };
@@ -62,6 +63,7 @@
 		4F114D9E1919C5E700C565B7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4F2C2C021919CB8F0092A6C8 /* FocusedSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FocusedSound.caf; sourceTree = "<group>"; };
 		4FA91108191B04910040A592 /* ShutterSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShutterSound.caf; sourceTree = "<group>"; };
+		6B513AEE1AA3047400790636 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		A8EFBFEB1AA2DCCD00C1415A /* BLEBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEBaseClass.h; sourceTree = "<group>"; };
 		A8EFBFEC1AA2DCCD00C1415A /* BLEBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEBaseClass.m; sourceTree = "<group>"; };
 		D8AAACC619FF84CE00699F07 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B513AEF1AA3047400790636 /* CoreBluetooth.framework in Frameworks */,
 				4F114D9F1919C5E700C565B7 /* AudioToolbox.framework in Frameworks */,
 				314AB607190A28FD0069D1BF /* CFNetwork.framework in Frameworks */,
 				314AB608190A28FD0069D1BF /* ImageIO.framework in Frameworks */,
@@ -109,6 +112,7 @@
 		311202B61909EF0D0064C413 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B513AEE1AA3047400790636 /* CoreBluetooth.framework */,
 				4F114D9E1919C5E700C565B7 /* AudioToolbox.framework */,
 				314AB604190A28FD0069D1BF /* CFNetwork.framework */,
 				314AB605190A28FD0069D1BF /* ImageIO.framework */,

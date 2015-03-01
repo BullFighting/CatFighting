@@ -11,8 +11,22 @@
 #import "LiveViewController.h"
 #import "ParameterViewController.h"
 #import "RecViewController.h"
+#import "BLEBaseClass.h"
+#import <CoreBluetooth/CoreBluetooth.h>
 
-@interface LiveViewController () <OLYCameraLiveViewDelegate, OLYCameraPropertyDelegate, OLYCameraRecordingSupportsDelegate>
+#define CONNECT_BUTTON 0
+#define DISCONNECT_BUTTON 1
+#define LED_ON_BUTTON 2
+#define LED_OFF_BUTTON 3
+
+#define UUID_VSP_SERVICE					@"569a1101-b87f-490c-92cb-11ba5ea5167c" //VSP
+#define UUID_RX                             @"569a2001-b87f-490c-92cb-11ba5ea5167c" //RX
+#define UUID_TX								@"569a2000-b87f-490c-92cb-11ba5ea5167c" //TX
+
+
+@interface LiveViewController () <OLYCameraLiveViewDelegate, OLYCameraPropertyDelegate, OLYCameraRecordingSupportsDelegate,BLEDeviceClassDelegate>
+@property (strong)		BLEBaseClass*	BaseClass;
+@property (readwrite)	BLEDeviceClass*	Device;
 
 @property (weak, nonatomic) IBOutlet UIView *imageContainerView;
 @property (weak, nonatomic) IBOutlet CameraLiveImageView *imageView;
@@ -84,6 +98,12 @@
 	SystemSoundID shutterSoundID;
 	AudioServicesCreateSystemSoundID((__bridge CFURLRef)shutterSoundURL, &shutterSoundID);
 	self.shutterSound = shutterSoundID;
+
+    	//BLEBaseClassの初期化
+    _BaseClass = [[BLEBaseClass alloc] init];
+    //	周りのBLEデバイスからのadvertise情報のスキャンを開始する
+    [_BaseClass scanDevices:nil];
+    _Device = 0;
 }
 
 - (void)didReceiveMemoryWarning
@@ -142,6 +162,7 @@
 {
 	[super viewDidAppear:animated];
     [UIApplication sharedApplication].idleTimerDisabled = YES;
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -165,6 +186,58 @@
 		// Ignore all exceptions.
 	}
 }
+
+- (IBAction)tapBluetooth:(id)sender {
+    [self connect];
+}
+
+
+- (void)didUpdateValueForCharacteristic:(BLEDeviceClass *)device Characteristic:(CBCharacteristic *)characteristic
+{
+    if (device == _Device)	{
+        //	キャラクタリスティックを扱う為のクラスを取得し
+        //	通知されたキャラクタリスティックと比較し同じであれば
+        //	bufに結果を格納
+        //iPhone->Device
+        CBCharacteristic*	rx = [_Device getCharacteristic:UUID_VSP_SERVICE characteristic:UUID_RX];
+        if (characteristic == rx)	{
+            //			uint8_t*	buf = (uint8_t*)[characteristic.value bytes]; //bufに結果が入る
+            //            NSLog(@"value=%@",characteristic.value);
+            return;
+        }
+
+        //Device->iPhone
+        CBCharacteristic*	tx = [_Device getCharacteristic:UUID_VSP_SERVICE characteristic:UUID_TX];
+        if (characteristic == tx)	{
+            //            NSLog(@"Receive value=%@",characteristic.value);
+            uint8_t*	buf = (uint8_t*)[characteristic.value bytes]; //bufに結果が入る
+            NSLog(@"buf[0]%d", buf[0]);
+            return;
+        }
+
+    }
+}
+
+-(void)connect{
+    //	UUID_DEMO_SERVICEサービスを持っているデバイスに接続する
+    _Device = [_BaseClass connectService:UUID_VSP_SERVICE];
+    if (_Device)	{
+        //	接続されたのでスキャンを停止する
+        [_BaseClass scanStop];
+        //	キャラクタリスティックの値を読み込んだときに自身をデリゲートに指定
+        _Device.delegate = self;
+
+        //[_BaseClass printDevices];
+
+        //	tx(Device->iPhone)のnotifyをセット
+        CBCharacteristic*	tx = [_Device getCharacteristic:UUID_VSP_SERVICE characteristic:UUID_TX];
+        if (tx)	{
+            //            [_Device readRequest:tx];
+            [_Device notifyRequest:tx];
+        }
+    }
+}
+
 
 - (IBAction)backToLiveView:(UIStoryboardSegue *)segue
 {
